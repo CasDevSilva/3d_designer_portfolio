@@ -3,7 +3,8 @@ import Footer from "../components/Footer"
 import Header from "../components/Header"
 
 const mObjCVInfo = {
-    src: "../../public/img/homepage_banner.jpg",
+    // src: "../../public/img/homepage_banner.jpg",
+    src: "img/homepage_banner.jpg",
     type: "image" // banner|row|image
 };
 

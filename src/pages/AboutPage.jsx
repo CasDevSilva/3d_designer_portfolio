@@ -6,7 +6,8 @@ import Services from "../components/Services";
 import Specialization from "../components/Specialization";
 
 const mObjAboutMePageInfo = {
-    src: "../../public/img/homepage_banner.jpg",
+    // src: "../../public/img/homepage_banner.jpg",
+    src: "img/homepage_banner.jpg",
     message: {
         title: "Acerca de",
         subtitle: "Diseñador de Interiores 3D"
@@ -15,11 +16,16 @@ const mObjAboutMePageInfo = {
 };
 
 let mArrGallery = [
-    "../../public/img/galley_images.jpg",
-    "../../public/img/galley_images.jpg",
-    "../../public/img/galley_images.jpg",
-    "../../public/img/galley_images.jpg",
-    "../../public/img/galley_images.jpg",
+    // "../../public/img/galley_images.jpg",
+    // "../../public/img/galley_images.jpg",
+    // "../../public/img/galley_images.jpg",
+    // "../../public/img/galley_images.jpg",
+    // "../../public/img/galley_images.jpg",
+    "img/galley_images.jpg",
+    "img/galley_images.jpg",
+    "img/galley_images.jpg",
+    "img/galley_images.jpg",
+    "img/galley_images.jpg",
 ]
 
 const AboutPage = () => {
