@@ -3,7 +3,6 @@ import Header from "../components/Header"
 import Portfolio from "../components/Portfolio";
 
 const mObjHomePageInfo = {
-    // src: "../../public/img/homepage_banner.jpg",
     src: "img/homepage_banner.jpg",
     message: "Luis Rimachi | Diseñador de Interiores",
     type: "banner" // banner|row|image

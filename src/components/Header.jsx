@@ -1,3 +1,4 @@
+import { Heading } from "@chakra-ui/react";
 import Navbar from "./Navbar"
 
 const Header = (props) => {
@@ -9,13 +10,13 @@ const Header = (props) => {
             {
                 mObjData.type == "banner"
                     ? <div style={{ width: "100%"}}>
-                        <h1>{mObjData.message}</h1>
+                        <Heading>{mObjData.message}</Heading>
                     </div>
                     : mObjData.type == "row"
                         ? <div>
                             <div style={{width: "50%"}}>
-                                <h1>{mObjData.message.title}</h1>
-                                <h2>{mObjData.message.subtitle}</h2>
+                                <Heading as="h1" size="2xl">{mObjData.message.title}</Heading>
+                                <Heading as="h2" size="xl">{mObjData.message.subtitle}</Heading>
                             </div>
                             <div style={{width: "50%"}}></div>
                         </div>

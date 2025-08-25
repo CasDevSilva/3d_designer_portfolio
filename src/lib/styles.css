@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald", sans-serif!important;
+}
+
+#navbar_img {
+    /* Estilo por defecto para pantallas grandes (desktop-first) */
+    width: 7%;
+    max-width: 150px; /* Evita que la imagen sea demasiado grande en monitores 4K */
+}
+
+/* Para pantallas de hasta 1439px de ancho (por debajo de HD) */
+@media screen and (max-width: 1439px) {
+    #navbar_img {
+        width: 10%;
+        max-width: 120px;
+    }
+}
+
+/* Para pantallas de hasta 1023px de ancho (por debajo de desktop) */
+@media screen and (max-width: 1023px) {
+    #navbar_img {
+        width: 15%;
+        max-width: 100px;
+    }
+}
+
+/* Para pantallas de hasta 767px de ancho (móviles) */
+@media screen and (max-width: 767px) {
+    #navbar_img {
+        width: 20%; /* Incrementa el tamaño para que sea visible en móviles */
+        max-width: 80px;
+    }
+}
