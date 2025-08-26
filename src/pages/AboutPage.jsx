@@ -16,11 +16,6 @@ const mObjAboutMePageInfo = {
 };
 
 let mArrGallery = [
-    // "../../public/img/galley_images.jpg",
-    // "../../public/img/galley_images.jpg",
-    // "../../public/img/galley_images.jpg",
-    // "../../public/img/galley_images.jpg",
-    // "../../public/img/galley_images.jpg",
     "img/galley_images.jpg",
     "img/galley_images.jpg",
     "img/galley_images.jpg",

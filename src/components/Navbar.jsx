@@ -9,7 +9,7 @@ const Navbar = () => {
             background={colors.dark}
             color={colors.light}
             width="100%"
-            p={[".5rem 1rem", "1rem", "1rem", "1rem 20rem"]}
+            p={[".5rem 1rem", "1rem", "1rem", "1rem 7.5rem", "1rem 20rem"]}
             justifyContent="space-between"
         >
             <Flex
@@ -41,11 +41,11 @@ const Navbar = () => {
             <Flex
                 // border="1px solid red"
                 display={["flex", "flex", "flex", "none"]}
-                justifyContent="center"
+                justifyContent="end"
                 alignItems="center"
                 w={["20%", "20%", "20%", "0%"]}
             >
-                <p style={{fontSize: "2rem"}}>
+                <p style={{fontSize: "2.5rem"}}>
                     <IoMenu/>
                 </p>
             </Flex>
