@@ -10,7 +10,7 @@ const Footer = () => {
             justifyContent="space-between"
             background={colors.dark}
             color={colors.light}
-            p={[".5rem 1rem", "1rem", "1rem","1rem 20rem"]}
+            p={[".5rem 1rem", "1rem", "1rem", "1rem 7.5rem", "1rem 20rem"]}
             width="100%"
         >
             <Heading

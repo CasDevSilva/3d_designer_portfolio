@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CardProject from "./CardProject";
+import { Box, Flex, Heading, List, ListItem, Stack } from "@chakra-ui/react";
+import { colors } from "../lib/colors";
 
 let mArrProjects = [
     {
@@ -68,18 +70,57 @@ const Portfolio = () => {
     const [cardsProjects, setCardsProject] = useState(setCards(mArrProjects));
 
     return (
-        <main>
-            <h1>Projects</h1>
-            <ul>
-                <li key="all" style={{cursor: 'pointer'}} onClick={() => filterProjects(["model", "project"])}>Todos</li>
-                <li key="projects" style={{cursor: 'pointer'}} onClick={() => filterProjects(["project"])}>Proyectos</li>
-                <li key="models" style={{cursor: 'pointer'}} onClick={() => filterProjects(["model"])}>Modelos 3D</li>
-            </ul>
+        <Flex
+            flexDirection="column"
+            gap="1rem"
+            p={[".5rem 1rem", "1rem", "1rem", "1rem 7.5rem", "1rem 20rem"]}
+        >
+            <Heading
+                as="h2"
+                size="2xl"
+                color={colors.dark}
+                // border="1px solid red"
+            >Proyectos & Tools</Heading>
+            <Stack direction="row" spacing={10}>
+                <List>
+                    <ListItem
+                        key="all"
+                        cursor="pointer"
+                        _hover={{
+                            background: "#000",
+                            color: "#fff"
+                        }}
+                        onClick={() => filterProjects(["model", "project"])}
+                        >Todos</ListItem>
+                </List>
+                <List>
+                    <ListItem
+                        key="projects"
+                        cursor="pointer"
+                        _hover={{
+                            background: "#000",
+                            color: "#fff"
+                        }}
+                        onClick={() => filterProjects(["project"])}
+                        >Proyectos</ListItem>
+                </List>
+                <List>
+                    <ListItem
+                        key="models"
+                        cursor="pointer"
+                        _hover={{
+                            background: "#000",
+                            color: "#fff"
+                        }}
+                        onClick={() => filterProjects(["model"])}
+                    >Modelos 3D</ListItem>
+                </List>
+            </Stack>
             <hr/>
             <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "2.5%"}}>
                 {cardsProjects}
             </div>
-        </main>
+        </Flex>
     )
 }
 
