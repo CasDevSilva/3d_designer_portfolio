@@ -43,14 +43,95 @@ This is a 3D designer portfolio built with React + Vite. It's a modern web appli
 
 ## Project Structure
 
-- `src/main.jsx` - Application entry point with React StrictMode
-- `src/App.jsx` - Main application component (currently minimal)
-- `public/` - Static assets
-- `.devcontainer/` - Development container configuration with setup scripts
+```
+src/
+├── main.jsx                    # Application entry point with React StrictMode
+├── App.jsx                     # Main application component with routing
+├── lib/
+│   └── colors.js              # Color theme system
+├── pages/
+│   └── Contact.jsx            # Contact page layout
+├── components/
+│   ├── CardProject.jsx        # Interactive project showcase cards
+│   ├── FormContact.jsx        # Contact form with state management
+│   ├── Btn.jsx               # Reusable button component
+│   ├── ContactAll.jsx        # Contact page container
+│   ├── ContactInfo.jsx       # Contact information display
+│   ├── Navbar.jsx            # Responsive navigation
+│   ├── Footer.jsx            # Site footer
+│   ├── Header*.jsx           # Header components
+│   ├── Gallery.jsx           # Image gallery component
+│   └── Card*.jsx             # Various card components
+├── public/                    # Static assets
+└── .devcontainer/            # Development container configuration
+```
+
+## Component Guidelines
+
+### CardProject Component
+**Purpose**: Displays project showcases with interactive elements
+**Props**:
+- `index`: Unique identifier for React keys
+- `src`: Image source URL
+- `name`: Project title
+- `action`: Callback function for "Ver detalles" button
+
+**UX Patterns**:
+- Mobile-first responsive design
+- Image hover zoom effects (desktop only)
+- Card lift animation on hover (desktop only)
+- Clear call-to-action with button
+- Consistent spacing and typography
+
+**Usage Example**:
+```jsx
+<CardProject
+  index={1}
+  src="/images/project1.jpg"
+  name="Project Name"
+  action={() => navigateToProject(1)}
+/>
+```
+
+### Form Components
+**FormContact**: Complete contact form with state management
+- Handles name, subject, email, message fields
+- Integrates with Web3Forms API
+- Auto-clears form after successful submission
+- Mobile-responsive layout
+
+**Btn**: Reusable button component
+- Receives `message` (button text) and `action` (callback) props
+- Consistent styling across application
+- Mobile-first responsive behavior
+
+## Responsive Design System
+
+All components follow this pattern:
+```jsx
+// Mobile-first responsive properties
+property={{ 
+  base: "mobile-value",     // Default (mobile)
+  md: "tablet-value",       // 768px+
+  lg: "desktop-value"       // 992px+
+}}
+
+// Conditional animations (desktop only)
+_hover={{
+  base: {},                 // No animations on mobile
+  md: {                     // Animations on desktop
+    transform: "translateY(-5px)",
+    boxShadow: "lg"
+  }
+}}
+```
 
 ## Development Notes
 
-- The project is set up as a private package with ES modules
-- Uses React's StrictMode for additional development checks
-- Vite config includes polling for file watching (useful in containerized environments)
-- Currently in early development stage with minimal component structure
+- Uses React 18 with functional components and hooks
+- ES modules with Vite for fast development
+- Chakra UI for consistent responsive design
+- Color system centralized in `src/lib/colors.js`
+- Mobile-first approach with performance optimization
+- Web3Forms integration for contact functionality
+- All animations disabled on mobile for better performance
