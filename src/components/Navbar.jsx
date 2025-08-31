@@ -2,8 +2,15 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import { colors } from "../lib/colors"
 import { RxHamburgerMenu } from "react-icons/rx"
+import { useState } from "react"
 
 const Navbar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen)
+    }
+
     return (
         <Box width="100%" background={colors.dark}>
             <Flex
@@ -45,11 +52,44 @@ const Navbar = () => {
                         color={colors.light}
                         fontSize="xl"
                         cursor="pointer"
+                        onClick={toggleMobileMenu}
                     >
                         <RxHamburgerMenu />
                     </Box>
                 </Flex>
             </Flex>
+
+            {/* Mobile Menu - Only visible when hamburger is clicked */}
+            {isMobileMenuOpen && (
+                <Box
+                    display={{ base: "block", lg: "none" }}
+                    background={colors.dark}
+                    borderTop="1px solid rgba(255, 255, 255, 0.1)"
+                >
+                    <Flex
+                        direction="column"
+                        maxW="1200px"
+                        mx="auto"
+                        px={4}
+                        py={4}
+                        gap={3}
+                        color={colors.light}
+                    >
+                        <Box py={2} borderBottom="1px solid rgba(255, 255, 255, 0.1)">
+                            <Link to="/" onClick={toggleMobileMenu}>Inicio</Link>
+                        </Box>
+                        <Box py={2} borderBottom="1px solid rgba(255, 255, 255, 0.1)">
+                            <Link to="/about" onClick={toggleMobileMenu}>Acerca de</Link>
+                        </Box>
+                        <Box py={2} borderBottom="1px solid rgba(255, 255, 255, 0.1)">
+                            <Link to="/cv" onClick={toggleMobileMenu}>Curriculum</Link>
+                        </Box>
+                        <Box py={2}>
+                            <Link to="/contact" onClick={toggleMobileMenu}>Contacto</Link>
+                        </Box>
+                    </Flex>
+                </Box>
+            )}
         </Box>
     )
 }
